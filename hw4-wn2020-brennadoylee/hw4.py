@@ -237,7 +237,7 @@ class TestAllMethods(unittest.TestCase):
 		self.assertEqual(self.d2.money, 500)
 		self.assertEqual(self.r1.food_left, 10)
 
-		#testing the output when there is no food by showing that nothing has changed
+		#testing the output when there is no food left by showing that nothing has changed
 		self.c1.order_food(self.driver1, self.rest1)
 		self.assertEqual(self.c1.money, 50)
 		self.assertEqual(self.driver1.money, 500)
