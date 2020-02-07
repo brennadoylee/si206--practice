@@ -228,7 +228,7 @@ class TestAllMethods(unittest.TestCase):
     # Test order food
     def test_order_food(self):
         self.customer1 = Customer("Brenna", money = 0)
-		self.rest1 = Restaurant("Fred's", food_left=0)
+        self.rest1 = Restaurant("Fred's", food_left=0)
 		self.driver1 = Driver("Sally", restaurants = [self.rest1])
 
 		#testing the output when there is not enough money by showing that nothing has changed
@@ -239,7 +239,7 @@ class TestAllMethods(unittest.TestCase):
 
 		#testing the output when there is no food by showing that nothing has changed
 		self.c1.order_food(self.driver1, self.rest1)
-		self.assertEqual(self.customer1.money, 50)
+		self.assertEqual(self.c1.money, 50)
 		self.assertEqual(self.driver1.money, 500)
 		self.assertEqual(self.rest1.food_left, 0)
 		
