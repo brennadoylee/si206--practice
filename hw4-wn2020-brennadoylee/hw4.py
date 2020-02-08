@@ -25,10 +25,11 @@ class Customer:
     # Pays the ComidaExpress driver 
     def make_payment(self, driver, amount):
         self.money -= amount
+        tip = amount * .2
+        if self.money >= tip:
+            self.money -= tip
         receive_payment(self.driver)
         
-    
-    '''
     
     def test_make_payment(self):
         # Check to see how much money there is prior to a payment
@@ -39,9 +40,9 @@ class Customer:
         self.c2.make_payment(self.d2, 30)
 
         # See if money has changed hands
-        self.assertEqual(self.c2.money, previous_money_customer - 30)
-        self.assertEqual(self.d2.money, previous_money_driver + 30)
-'''
+        self.assertEqual(self.c2.money, previous_money_customer - 36)
+        self.assertEqual(self.d2.money, previous_money_driver + 36)
+
     # Orders food from the restaurant to be delivered by the driver,
     # assuming certain conditions are met.  
     def order_food(self, driver, restaurant):
